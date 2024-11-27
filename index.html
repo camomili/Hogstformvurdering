@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egnethet Dashboard</title>
+    <link rel="stylesheet" href="Style.css">
+    <script defer src="Body.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-title">Egnethet Dashboard</div>
+            <button class="navbar-button">Gå til vurdering/rapport</button>
+        </div>
+    </nav>
+    <header>
+        <h1>Vurdering av Hogstform</h1>
+        <p>Velg kriterier for å evaluere egnethet for ulike hogstformer.</p>
+    </header>
+    <main>
+        <form id="assessmentForm">
+            <section>
+                <h2>Driftsteknisk Egnethet</h2>
+                <label for="slope">Helling:</label>
+                <select id="slope" name="slope">
+                    <option value="egnet">Under 15%</option>
+                    <option value="sannsynligvis_egnet">15-20%</option>
+                    <option value="ikke_egnet">Over 20%</option>
+                </select>
+
+                <label for="surface">Overflatestruktur:</label>
+                <select id="surface" name="surface">
+                    <option value="meget_god">Meget god</option>
+                    <option value="god">God</option>
+                    <option value="middels">Middels god</option>
+                    <option value="dårlig">Dårlig</option>
+                    <option value="svært_dårlig">Svært dårlig</option>
+                </select>
+
+                <label for="bearingCapacity">Bæreevne:</label>
+                <input type="text" id="bearingCapacity" name="bearingCapacity">
+            </section>
+
+            <section>
+                <h2>Økologisk Egnethet</h2>
+                <label for="peatForest">Myrskog/sumpskog:</label>
+                <select id="peatForest" name="peatForest">
+                    <option value="yes">Ja</option>
+                    <option value="no">Nei</option>
+                </select>
+
+                <label for="hogstClass">Hogstklasse:</label>
+                <select id="hogstClass" name="hogstClass">
+                    <option value="hk_4_5">Hk. 4/5</option>
+                    <option value="hk_3">Hk. 3</option>
+                    <option value="andre">Andre</option>
+                </select>
+
+                <label for="treeSpecies">Treslag:</label>
+                <select id="treeSpecies" name="treeSpecies">
+                    <option value="gran">Gran</option>
+                    <option value="furu">Furu</option>
+                    <option value="bartredominert">Bartredominert</option>
+                    <option value="blandingsskog">Blandingsskog</option>
+                </select>
+
+                <label for="treeSuitability">Er treslaget egnet for voksestedet?</label>
+                <input type="text" id="treeSuitability" name="treeSuitability">
+            </section>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" style="display: none;">
+            <p id="evaluation"></p>
+        </div>
+    </main>
+</body>
+</html>
